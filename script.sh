@@ -51,6 +51,7 @@ echo "${to_test[@]}"
 
 
 # Build build-image to run tests
+echo "Building base-image"
 /usr/local/bin/docker build -f build.Dockerfile -t build-image:latest .
 
 
