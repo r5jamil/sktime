@@ -1,0 +1,9 @@
+name: sktime-test
+channels:
+  - conda-forge
+dependencies:
+  - python=3.11
+  - numpy
+  - sktime
+  - pytest-xdist       # for `-n auto`
+  - pytest-timeout     # for `--timeout`
