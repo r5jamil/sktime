@@ -49,6 +49,14 @@ done
 echo "$testing"
 echo "${to_test[@]}"
 
+# Build base-image only first time
+if docker image inspect base-image:latest > /dev/null 2>&1; then
+   echo "Base image already exists. No need to rebuild."
+else
+   echo "Base image does not exist. Building only once..."
+   /usr/local/bin/docker build -f base.Dockerfile -t base-image:latest .
+fi
+
 
 # Build build-image to run tests
 /usr/local/bin/docker build -f build.Dockerfile -t build-image:latest .
