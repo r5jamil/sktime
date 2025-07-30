@@ -46,12 +46,12 @@ done
 
 
 # Print the variables
-echo "$testing"
-echo "${to_test[@]}"
+echo "Will testing run: $testing"
+echo "Models to be tested: ${to_test[@]}"
 
 
 # Build build-image to run tests
-echo "Building base-image"
+echo "Building build-image containing latest changes..."
 /usr/local/bin/docker build -f build.Dockerfile -t build-image:latest .
 
 
